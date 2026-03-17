@@ -274,7 +274,12 @@
     }
 
     /* ─── About ─── */
-    .about-text { max-width: 680px; }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 40px;
+      align-items: start;
+    }
     .about-text p {
       font-size: 1.05rem;
       color: var(--text);
@@ -283,10 +288,15 @@
     }
     .about-text p strong { font-weight: 600; }
     .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: sticky;
+      top: 80px;
+    }
+    @media (max-width: 700px) {
+      .about-layout { grid-template-columns: 1fr; }
+      .about-stats { position: static; flex-direction: column; }
     }
     .stat-card {
       padding: 20px 24px;
@@ -977,7 +987,6 @@
     @media (max-width: 900px) {
       .cs-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; gap: 32px; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
     }
 
     @media (max-width: 700px) {
@@ -1000,7 +1009,6 @@
         grid-template-columns: 1fr;
         gap: 10px;
       }
-      .about-stats { grid-template-columns: 1fr; }
       .edu-cols { grid-template-columns: 1fr; gap: 24px; }
       .contact-inner { grid-template-columns: 1fr; }
       .cert-wrap { order: -1; display: flex; flex-direction: column; align-items: flex-start; }
@@ -1075,46 +1083,48 @@
     <div class="container">
       <p class="section-label">// about</p>
       <h2 class="section-title">The Stack</h2>
-      <div class="about-text">
-        <p>
-          Some people follow a straight path. <strong>I've been pushing commits.</strong>
-        </p>
-        <p>
-          Developer → educator of <strong>700+ students</strong> → product manager → business analyst.
-          Each version shipped new thinking. Each role taught me how users, systems, and businesses
-          actually work from the inside out.
-        </p>
-        <p>
-          I started in engineering, where I shipped iOS, Android, and web features at a fintech startup
-          and <strong>abstracted 90% of duplicated code</strong> into a reusable package at a legal-tech
-          firm. Then I spent three years teaching front-end development, running Scrum ceremonies for
-          student teams, and iterating on the LMS itself.
-        </p>
-        <p>
-          Now I sit at the intersection I was always moving towards: <strong>technical enough to talk
-          to engineers</strong>, empathetic enough to understand users, and analytical enough to build
-          a business case from first principles.
-        </p>
-        <p>
-          I also have a strong conviction: <strong>if you're not doing anything with AI, you're choosing to be slower.</strong>
-          In my current role as Student Success Manager, I'm actively using <strong>PowerAutomate</strong> to
-          automate manual onboarding and administrative workflows — because time spent on repetitive process
-          is time stolen from work that actually matters. I believe every administrative task that <em>can</em>
-          be automated <em>should</em> be automated, and I won't wait to be asked.
-        </p>
-      </div>
-      <div class="about-stats">
-        <div class="brutal-card stat-card">
-          <div class="stat-number">700+</div>
-          <div class="stat-label">students mentored</div>
+      <div class="about-layout">
+        <div class="about-text">
+          <p>
+            Some people follow a straight path. <strong>I've been pushing commits.</strong>
+          </p>
+          <p>
+            Developer → educator of <strong>700+ students</strong> → product manager → business analyst.
+            Each version shipped new thinking. Each role taught me how users, systems, and businesses
+            actually work from the inside out.
+          </p>
+          <p>
+            I started in engineering, where I shipped iOS, Android, and web features at a fintech startup
+            and <strong>abstracted 90% of duplicated code</strong> into a reusable package at a legal-tech
+            firm. Then I spent three years teaching front-end development, running Scrum ceremonies for
+            student teams, and iterating on the LMS itself.
+          </p>
+          <p>
+            Now I sit at the intersection I was always moving towards: <strong>technical enough to talk
+            to engineers</strong>, empathetic enough to understand users, and analytical enough to build
+            a business case from first principles.
+          </p>
+          <p>
+            I also have a strong conviction: <strong>if you're not doing anything with AI, you're choosing to be slower.</strong>
+            In my current role as Student Success Manager, I'm actively using <strong>PowerAutomate</strong> to
+            automate manual onboarding and administrative workflows — because time spent on repetitive process
+            is time stolen from work that actually matters. I believe every administrative task that <em>can</em>
+            be automated <em>should</em> be automated, and I won't wait to be asked.
+          </p>
         </div>
-        <div class="brutal-card stat-card">
-          <div class="stat-number">2</div>
-          <div class="stat-label">internships completed</div>
-        </div>
-        <div class="brutal-card stat-card">
-          <div class="stat-number">90%</div>
-          <div class="stat-label">code duplication removed</div>
+        <div class="about-stats">
+          <div class="brutal-card stat-card">
+            <div class="stat-number">700+</div>
+            <div class="stat-label">students mentored</div>
+          </div>
+          <div class="brutal-card stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">internships completed</div>
+          </div>
+          <div class="brutal-card stat-card">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">code duplication removed</div>
+          </div>
         </div>
       </div>
     </div>
