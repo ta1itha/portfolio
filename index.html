@@ -743,6 +743,42 @@
     .cs-expand ul { padding-left: 16px; list-style: disc; }
     .cs-expand li + li { margin-top: 4px; }
 
+    /* ─── Jelly Badge Animation ─── */
+    @keyframes jelly {
+      0%   { transform: scale(1, 1); }
+      25%  { transform: scale(1.2, 0.8); }
+      40%  { transform: scale(0.85, 1.15); }
+      55%  { transform: scale(1.1, 0.9); }
+      70%  { transform: scale(0.97, 1.03); }
+      85%  { transform: scale(1.03, 0.97); }
+      100% { transform: scale(1, 1); }
+    }
+    .jelly-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border: var(--border);
+      border-radius: 999px;
+      box-shadow: 2px 2px 0 0 var(--text);
+      cursor: default;
+      user-select: none;
+      transition: box-shadow 0.15s ease;
+    }
+    .jelly-badge:hover {
+      animation: jelly 0.6s ease;
+      box-shadow: 3px 3px 0 0 var(--text);
+    }
+    .jelly-badge-primary  { background: var(--primary); }
+    .jelly-badge-secondary { background: var(--secondary); }
+    .jelly-badge-accent   { background: var(--accent); }
+    .jelly-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     /* ─── Skills ─── */
     .skills-cats {
       display: grid;
@@ -1339,15 +1375,15 @@
           <div class="stroop-about-grid">
             <div class="stroop-about-block">
               <h4 class="stroop-about-heading">The Setup</h4>
-              <p class="stroop-about-text">Stroop Digital Academy runs a structured Agile Product Manager programme where the intern owns the entire experience there's no manager handing you a brief. You're given a learning pathway and told to ship. The modules Business Canvas, Product Canvas, Customer Journey mapping, OKRs, MVP Design & Roadmap, Product Backlog, Delivery, Value Measurement aren't just theory. Each one is a deliverable you produce, review, and iterate on.</p>
+              <p class="stroop-about-text">Stroop Digital Academy runs a structured Agile Product Manager programme where the intern owns the entire experience: there's no manager handing you a brief. You're given a learning pathway and told to ship. The modules Business Canvas, Product Canvas, Customer Journey mapping, OKRs, MVP Design & Roadmap, Product Backlog, Delivery, Value Measurement aren't just theory. Each one is a deliverable you produce, review, and iterate on.</p>
             </div>
             <div class="stroop-about-block">
               <h4 class="stroop-about-heading">The Challenge</h4>
-              <p class="stroop-about-text">The actual product you're building is the internship itself. You're expected to apply everything you learn to identify what works, what doesn't, and how to make the programme better for the cohort behind you. That means thinking like a PM from day one not just completing tasks, but asking why the tasks exist, whether they're the right ones, and what a better version looks like.</p>
+              <p class="stroop-about-text">The actual product you're building is the internship itself. You're expected to apply everything you learn to identify what works, what doesn't, and how to make the programme better for the cohort behind you. That means thinking like a PM from day one, not just completing tasks, but asking why the tasks exist, whether they're the right ones, and what a better version looks like.</p>
             </div>
             <div class="stroop-about-block">
               <h4 class="stroop-about-heading">Why It Clicked</h4>
-              <p class="stroop-about-text">As a developer, I've always been wired to look at a system and ask: <em>where's the waste?</em> Stroop gave me a framework to channel that instinct productively. Every friction point became a user story. Every repeated confusion became a process gap worth closing. I wasn't just learning product management I was practising it on the thing in front of me.</p>
+              <p class="stroop-about-text">As a developer, I've always been wired to look at a system and ask: <em>where's the waste?</em> Stroop gave me a framework to channel that instinct productively. Every friction point became a user story. Every repeated confusion became a process gap worth closing. I wasn't just learning product management; I was practising it on the thing in front of me.</p>
             </div>
           </div>
         </div>
@@ -1550,7 +1586,53 @@
     </div>
   </section>
 
-  <!-- ─── Education & Certifications ─── -->
+  <!-- ─── LinkedIn Skills ─── -->
+  <section id="linkedin-skills" class="section section-alt">
+    <div class="container">
+      <p class="section-label">// linkedin · verified skills</p>
+      <h2 class="section-title">Skills</h2>
+
+      <p style="font-size:0.9rem; color:var(--muted); margin-bottom:24px;">Hover a badge.</p>
+
+      <h3 style="font-family:var(--font-head);font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:12px;">Product &amp; Business Analysis</h3>
+      <div class="jelly-wrap" style="margin-bottom:28px;">
+        <span class="jelly-badge jelly-badge-primary">Product Management</span>
+        <span class="jelly-badge jelly-badge-primary">Product Road Mapping</span>
+        <span class="jelly-badge jelly-badge-primary">Product Lifecycle Management</span>
+        <span class="jelly-badge jelly-badge-primary">Analytical Skills</span>
+        <span class="jelly-badge jelly-badge-primary">Performance Metrics</span>
+        <span class="jelly-badge jelly-badge-primary">UX Research</span>
+        <span class="jelly-badge jelly-badge-primary">Market Research</span>
+        <span class="jelly-badge jelly-badge-primary">Customer Journey Mapping</span>
+        <span class="jelly-badge jelly-badge-primary">Agile &amp; Waterfall Methodologies</span>
+        <span class="jelly-badge jelly-badge-primary">Scrum</span>
+      </div>
+
+      <h3 style="font-family:var(--font-head);font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:12px;">Education &amp; Leadership</h3>
+      <div class="jelly-wrap" style="margin-bottom:28px;">
+        <span class="jelly-badge jelly-badge-secondary">Adult Education</span>
+        <span class="jelly-badge jelly-badge-secondary">Pedagogy</span>
+        <span class="jelly-badge jelly-badge-secondary">Cross-team Collaboration</span>
+        <span class="jelly-badge jelly-badge-secondary">Team Management</span>
+        <span class="jelly-badge jelly-badge-secondary">Coaching &amp; Mentoring</span>
+      </div>
+
+      <h3 style="font-family:var(--font-head);font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:12px;">Technical</h3>
+      <div class="jelly-wrap">
+        <span class="jelly-badge jelly-badge-accent">JavaScript</span>
+        <span class="jelly-badge jelly-badge-accent">TypeScript</span>
+        <span class="jelly-badge jelly-badge-accent">CSS</span>
+        <span class="jelly-badge jelly-badge-accent">NestJS</span>
+        <span class="jelly-badge jelly-badge-accent">AngularJS</span>
+        <span class="jelly-badge jelly-badge-accent">Flutter</span>
+        <span class="jelly-badge jelly-badge-accent">Python</span>
+        <span class="jelly-badge jelly-badge-accent">MySQL</span>
+        <span class="jelly-badge jelly-badge-accent">Docker</span>
+        <span class="jelly-badge jelly-badge-accent">Jest</span>
+        <span class="jelly-badge jelly-badge-accent">Software Documentation</span>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── Recommendations ─── -->
   <section id="recommendations" class="section section-alt">
@@ -1689,7 +1771,7 @@
       </div>
       <div class="footer-close">
         <p>Currently at <strong>v1.3.0-beta</strong>. Always shipping.</p>
-        <p>Built with HTML, CSS and Claude, and a lot of stubborn ambition.</p>
+        <p>Built with HTML, CSS, and Claude, plus a lot of stubborn ambition.</p>
       </div>
     </div>
   </footer>
