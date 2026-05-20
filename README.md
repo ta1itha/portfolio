@@ -1,6 +1,6 @@
 # Talitha O'Brien — Portfolio
 
-Personal portfolio website targeting Associate Technical Product Manager roles.
+Personal portfolio website tailored for Customer Success roles in SaaS / HR tech.
 
 **Live site:** https://ta1itha.github.io/portfolio
 
