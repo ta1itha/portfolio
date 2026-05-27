@@ -439,36 +439,50 @@ ul { list-style: none; }
 .edu-entry-detail strong { font-weight: 700; }
 
 /* ─── Recommendations ─── */
-.rec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.rec-card { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
-.rec-card-featured { background: var(--primary); position: relative; }
-.rec-featured-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  background: var(--text);
-  color: var(--bg);
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 16px;
+.rec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.rec-card { padding: 0; display: flex; flex-direction: column; overflow: hidden; }
+.rec-card::before { content: ''; display: block; height: 6px; background: var(--text); }
+.rec-card-primary::before   { background: var(--primary); }
+.rec-card-secondary::before { background: var(--secondary); }
+.rec-card-accent::before    { background: var(--accent); }
+
+.rec-card-featured { background: var(--primary); }
+.rec-card-featured::before { display: none; }
+.rec-featured-banner {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--text); color: var(--bg);
+  padding: 10px 18px;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
 }
-.rec-card-featured .rec-quote-mark { color: var(--text); border-bottom-color: var(--text); }
-.rec-card-featured .rec-author { border-top-color: hsl(194, 40%, 60%); }
-.rec-quote-mark { font-family: var(--font-head); font-size: 4rem; font-weight: 700; line-height: 0.8; color: var(--primary); border-bottom: var(--border); padding-bottom: 16px; }
-.rec-text { font-size: 0.9rem; line-height: 1.75; color: var(--text); flex: 1; font-style: italic; }
-.rec-author { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: var(--border-subtle); }
-.rec-author-info { display: flex; flex-direction: column; gap: 2px; }
-.rec-avatar { width: 72px; height: 72px; border-radius: 50%; border: var(--border); object-fit: cover; margin-bottom: 8px; display: block; }
-.rec-name { font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; }
-.rec-role { font-size: 0.8rem; color: var(--muted); }
-.rec-rel { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
-.rec-li-link { flex-shrink: 0; color: var(--muted); transition: color 0.15s; }
+
+.rec-header { display: flex; align-items: center; gap: 14px; padding: 18px 22px; border-bottom: var(--border-subtle); }
+.rec-card-featured .rec-header { border-bottom-color: hsl(194, 40%, 55%); }
+.rec-avatar { width: 56px; height: 56px; border-radius: 50%; border: var(--border); object-fit: cover; flex-shrink: 0; display: block; }
+.rec-header-meta { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.rec-name { font-family: var(--font-head); font-size: 1rem; font-weight: 700; line-height: 1.2; }
+.rec-role { font-size: 0.8rem; color: var(--muted); line-height: 1.35; }
+.rec-card-featured .rec-role { color: hsl(20, 25%, 22%); }
+.rec-li-link { flex-shrink: 0; color: var(--muted); transition: color 0.15s; display: inline-flex; }
 .rec-li-link:hover { color: var(--text); }
+.rec-card-featured .rec-li-link { color: hsl(20, 25%, 25%); }
+.rec-card-featured .rec-li-link:hover { color: var(--text); }
+
+.rec-body { padding: 18px 22px 20px; flex: 1; }
+.rec-quote-mark {
+  font-family: var(--font-head); font-size: 3.5rem; font-weight: 700;
+  line-height: 0.7; display: block; margin-bottom: 4px;
+  color: var(--primary);
+}
+.rec-card-secondary .rec-quote-mark { color: var(--secondary); }
+.rec-card-accent    .rec-quote-mark { color: var(--accent); }
+.rec-card-featured  .rec-quote-mark { color: var(--text); }
+.rec-text { font-size: 0.92rem; line-height: 1.75; color: var(--text); font-style: italic; margin: 0; }
+
+.rec-meta-bar { padding: 12px 22px; border-top: var(--border-subtle); display: flex; justify-content: flex-end; }
+.rec-card-featured .rec-meta-bar { border-top-color: hsl(194, 40%, 55%); }
+.rec-rel { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.rec-card-featured .rec-rel { color: hsl(20, 25%, 22%); }
 
 /* ─── Contact / Footer ─── */
 #contact { border-top: var(--border); padding: 48px 0 32px; }
